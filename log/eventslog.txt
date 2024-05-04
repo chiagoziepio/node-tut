@@ -2,3 +2,41 @@
 
 20240430	21:14:30	a98f6c51-345e-4388-a452-d3b1fd2a8aff	log event emitted
 
+20240503	22:24:40	43db4268-ee70-45a3-b677-e64ce47d3cc3	GET	undefined	/
+
+20240503	22:24:41	547da5c4-4e94-4234-8e9b-7949344fa9ba	GET	undefined	/css/style.css
+
+20240503	22:24:41	619541db-d778-4098-bf99-ffa65a4feac3	GET	undefined	/favicon.ico
+
+20240504	06:36:33	4fdee65a-3a24-4f3b-a8c7-1b27eb7d8862	GET	undefined	/
+
+20240504	06:36:33	d741d29a-9951-4ced-b50d-a112ab2086d0	GET	undefined	/css/style.css
+
+20240504	06:36:34	af0b0275-af30-432f-86de-735da31f269c	GET	undefined	/favicon.ico
+
+20240504	06:49:56	e2e6ff1e-aa33-4282-925f-73cea8bb295e	GET	chrome-untrusted://new-tab-page	/
+
+20240504	07:06:53	75183e91-d455-4afe-a4d3-91e11ea801eb	GET	chrome-untrusted://new-tab-page	/
+
+20240504	07:14:37	5cb85ff9-8783-4f9b-a23b-3a82de47431b	GET	undefined	/
+
+20240504	07:14:39	10ae0bd2-7308-4738-9cdd-be4702e15533	GET	undefined	/favicon.ico
+
+20240504	07:15:19	cb350de4-bd4e-47b0-96b6-149271202ff2	GET	undefined	/
+
+20240504	07:15:20	e8e66bed-316c-43a1-bad0-d0313bb45428	GET	undefined	/css/style.css
+
+20240504	07:15:20	8b75e158-0db0-4c51-9831-a220aa4e957f	GET	undefined	/favicon.ico
+
+20240504	08:12:49	22539c46-7b4a-4699-88e9-6cb018293a65	GET	undefined	/
+
+20240504	08:17:11	6f7532c3-1a9f-4271-82ec-1514dc49f176	GET	undefined	/
+
+20240504	08:17:13	97a3b427-f806-4d4e-9a8b-430e5401142f	GET	undefined	/favicon.ico
+
+20240504	08:20:59	f2346b07-5625-41be-8745-bdc3ba0145a1	GET	undefined	/
+
+20240504	08:20:59	498e8401-0503-48d0-a3f3-6fbe2fa2db09	GET	undefined	/css/style.css
+
+20240504	08:21:00	bce453a4-84bb-4f5d-b40e-8ecf27017207	GET	undefined	/favicon.ico
+

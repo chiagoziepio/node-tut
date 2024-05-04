@@ -55,22 +55,18 @@ app.use(express.json())
 
 app.use(express.static(path.join(__dirname, '/public')))
 
+// router in express uses app.use()
 
-app.get("^/$|/index(.html)?", (req, res)=>{
-    res.sendFile(path.join(__dirname, "pages", "index.html"))
-});
-app.get("/new-page(.html)?", (req,res)=>{
-    res.sendFile(path.join(__dirname, "pages", "new-page.html"))
-}); 
-// how express handles redirect
+app.use("/", require("./routes/root"))
+ 
+app.use("/subfolder", require("./routes/routes"));
 
-app.get("/old-page(.html)?", (req, res)=>{
-    // using the express redirect method, we will have to specify (301) the statuscode because express will send 302 which is not a permanent redirect
-    res.redirect(301, "/new-page.html")
-} )
-app.get("/*", (req, res)=>{
-    res.status(400).sendFile(path.join(__dirname, "pages", "error.html"))
-})
+// for workers api
+
+app.use("/worker", require("./routes/api/worker"))
+
+
+
 
 // for handling express errors in a custom way
 

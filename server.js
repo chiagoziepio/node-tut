@@ -6,7 +6,7 @@ const path = require("path")
 const { logger } = require("./middleware/logEvent");
 const cors = require("cors");
 const errorHandler = require("./middleware/errorHandler")
-
+const corsOptions = require("./config/corsAllowed")
 const app = express()
 const PORT = process.env.PORT || 5000
 // the ^/$|/index.html means the it can accept only the the / or /index.html
@@ -30,18 +30,7 @@ app.use(logger)
 // cors prevents cross-origin sharing
 // to put  the origin that should bre allowed to make request to your server, we have putit in  an array otherwise leave cors open to accept every origin : app.use(cors())
 
-const acceptedOrigin = ["https://www.mysite.com","http://127.0.0.1:1573", "https://localhost:500"]
 
-const corsOptions = {
-    origin: (origin, callback)=>{
-        if(acceptedOrigin.indexOf(origin) !== -1 || !origin){
-            callback(null, true)
-        }else{
-            callback(new Error("not allowed by cors"))
-        }
-    },
-    optionsSuccessStatus:200
-}
 
 app.use(cors(corsOptions))
 
@@ -57,13 +46,17 @@ app.use(express.static(path.join(__dirname, '/public')))
 
 // router in express uses app.use()
 
+// for the subfolders
+
+app.use("/subfolder", require("./routes/routes"));
+// for the api request
+app.use("/worker", require("./routes/api/worker"))
+//for the root pages
 app.use("/", require("./routes/root"))
  
-app.use("/subfolder", require("./routes/routes"));
 
 // for workers api
 
-app.use("/worker", require("./routes/api/worker"))
 
 
 

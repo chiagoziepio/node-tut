@@ -190,3 +190,17 @@
 
 20240508	20:55:54	0d23ba2e-b851-49cc-b2ff-c178a0188143	POST	undefined	/worker
 
+20240508	21:58:34	2a3bbc5e-a514-4eac-acca-1438d93544e9	GET	undefined	/worker
+
+20240508	21:59:06	29b501b9-2793-4c46-bffb-ad04834e1c7a	POST	undefined	/worker
+
+20240508	22:01:08	062ad07a-960b-4368-97d7-3786a427934a	PUT	undefined	/worker
+
+20240508	22:02:10	a85e9089-c4f6-4e89-8b24-23df55e69bff	PUT	undefined	/worker
+
+20240508	22:02:29	db298704-2499-411e-afe4-7ef62abd9b08	DELETE	undefined	/worker
+
+20240508	22:03:47	035a738d-1acf-44b3-860b-56115a0d0bb2	GET	undefined	/worker/2
+
+20240508	22:06:02	88583d52-b32a-4ed2-aebb-da2580ce5961	GET	undefined	/worker/2
+

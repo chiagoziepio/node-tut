@@ -54,13 +54,6 @@ app.use("/worker", require("./routes/api/worker"))
 //for the root pages
 app.use("/", require("./routes/root"))
  
-
-// for workers api
-
-
-
-
-
 // for handling express errors in a custom way
 
 app.use(errorHandler)

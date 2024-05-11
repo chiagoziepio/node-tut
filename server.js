@@ -51,6 +51,9 @@ app.use(express.static(path.join(__dirname, '/public')))
 app.use("/subfolder", require("./routes/routes"));
 // for the api request
 app.use("/worker", require("./routes/api/worker"))
+//for registering new users
+app.use("/register", require("./routes/register"));
+app.use("/login", require("./routes/login"))
 //for the root pages
 app.use("/", require("./routes/root"))
  

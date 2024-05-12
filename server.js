@@ -1,13 +1,13 @@
+require("dotenv").config();
 const express = require("express")
-const http = require("http");
-const fs = require('fs');
-const fspromises = require("fs").promises
 const path = require("path")
 const { logger } = require("./middleware/logEvent");
 const cors = require("cors");
 const errorHandler = require("./middleware/errorHandler")
 const corsOptions = require("./config/corsAllowed")
 const app = express()
+const verifyJWT = require("./middleware/verifyJwt")
+const cookieParser = require("cookie-parser")
 const PORT = process.env.PORT || 5000
 // the ^/$|/index.html means the it can accept only the the / or /index.html
 // to make the extension of.html optional, we will have to add (.html)?
@@ -42,20 +42,25 @@ app.use(express.urlencoded({extended:false}));
 // for json
 app.use(express.json())
 
+app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, '/public')))
 
 // router in express uses app.use()
 
-// for the subfolders
+//for the root pages
+/* app.use("/", require("./routes/root")) */
 
+// for the subfolders
 app.use("/subfolder", require("./routes/routes"));
-// for the api request
-app.use("/worker", require("./routes/api/worker"))
 //for registering new users
 app.use("/register", require("./routes/register"));
-app.use("/login", require("./routes/login"))
-//for the root pages
-app.use("/", require("./routes/root"))
+// for login and authorization
+app.use("/login", require("./routes/login"));
+app.use("/refresh", require("./routes/refresh"));
+app.use(verifyJWT);
+// for the api request
+app.use("/worker", require("./routes/api/worker"))
  
 // for handling express errors in a custom way
 

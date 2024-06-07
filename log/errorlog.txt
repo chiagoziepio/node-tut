@@ -12,3 +12,7 @@
 
 20240512	10:42:15	0960260c-39fc-4009-bbf5-231b09182731	ReferenceError: sendStatus is not defined
 
+20240516	01:04:12	6108d7a9-fc79-4c6f-b194-de7155a9d749	TypeError: corsAllowed.include is not a function
+
+20240516	01:05:13	280ad584-68ed-4990-93ee-f2556859f384	TypeError: corsAllowed.includes is not a function
+

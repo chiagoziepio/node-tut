@@ -1,8 +1,4 @@
-const acceptedOrigin = [
-    "https://www.mysite.com",
-    "http://127.0.0.1:1573", 
-    "https://localhost:500"]
-
+const acceptedOrigin = require("./acceptedOrigin")
 const corsOptions = {
     origin: (origin, callback)=>{
         if(acceptedOrigin.indexOf(origin) !== -1 || !origin){

@@ -8,6 +8,7 @@ const corsOptions = require("./config/corsAllowed")
 const app = express()
 const verifyJWT = require("./middleware/verifyJwt")
 const cookieParser = require("cookie-parser")
+
 const PORT = process.env.PORT || 5000
 // the ^/$|/index.html means the it can accept only the the / or /index.html
 // to make the extension of.html optional, we will have to add (.html)?
@@ -58,6 +59,7 @@ app.use("/register", require("./routes/register"));
 // for login and authorization
 app.use("/login", require("./routes/login"));
 app.use("/refresh", require("./routes/refresh"));
+app.use("/logout", require("./routes/logout"))
 app.use(verifyJWT);
 // for the api request
 app.use("/worker", require("./routes/api/worker"))

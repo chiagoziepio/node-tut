@@ -30,10 +30,10 @@ const handleLogin = async (req,res)=>{
         const currentUser = {...theUser, refreshtoken};
         users.setUser([...otherUsers, currentUser]);
         fspromises.writeFile(
-            path.join(__dirname, "..", "data", "userrs"),
+            path.join(__dirname, "..", "data", "userrs.json"),
             JSON.stringify(users.user)
         )
-        res.cookie("jwts" , refreshtoken, { httpOnly: true, maxAge: 24 * 60 *60 * 1000})
+        res.cookie("jwts" , refreshtoken, { httpOnly: true,sameSite: "None", secure: true, maxAge: 24 * 60 *60 * 1000})
         res.json({ accesstoken})
     } else{
         res.sendStatus(401)

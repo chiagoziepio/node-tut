@@ -12,7 +12,7 @@ const handleRefreshtoken =  (req,res)=>{
     if(!cookies?.jwts)return res.sendStatus(401);
     console.log(cookies.jwts);
     const refreshToken = cookies.jwts
-    const theUser = users.user.find(person => person.refreshToken = refreshToken)
+    const theUser = users.user.find(person => person.refreshToken === refreshToken)
     if(!theUser) return res.sendStatus(403)
     
     jsonwebtoken.verify(
